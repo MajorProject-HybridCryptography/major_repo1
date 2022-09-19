@@ -1,0 +1,25 @@
+
+{% extends "testapp/header.html" %}
+
+{% block content %} 
+
+{% load crispy_forms_tags %}         
+
+<!--Register-->
+<!--<div class = "row first-info" style="background-image:url({static 'images/th.jpg'%})"></div>-->
+<div class="first-info">
+<div class="container py-5">
+	<h1>Register</h1>
+
+	<!--<link rel="stylesheet" href="{static 'images/th.jpg'%}">-->
+	<link rel="stylesheet" type="text/css" href="\static\css\reg.css"/>
+
+	<form method="POST">
+		{% csrf_token %}
+		{{ register_form|crispy }}                    
+		<button class="btn btn-primary" type="submit">Register</button>
+	</form>
+	<p class="text-center">If you already have an account, <a href="/login">login</a> instead.</p>
+</div>
+</div>
+{% endblock %}
